@@ -1,5 +1,5 @@
 {% set name = "texlab" %}
-{% set version = "2.2.0" %}
+{% set version = "2.2.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/latex-lsp/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 313b7c230c71a0087a2a5aadbba1d8ba1a929e1e8f98b8b7553ca956fc567835
+  sha256: a3aa08b12da412361a52fbef0d7b35ef3326a8ab3bdcf7beb370738f39b90c25
 
 build:
   number: 0
@@ -494,7 +494,7 @@ about:
     - library_licenses/xmlparser-LICENSE-MIT
     - LICENSE
   # END license_file
-  summary: 'An implementation of the Language Server Protocol for LaTeX'
+  summary: An implementation of the Language Server Protocol for LaTeX
   description: |
     A cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
     providing rich cross-editing support for the [LaTeX](https://www.latex-project.org/) typesetting system.
