@@ -3,6 +3,6 @@ channel_sources:
 channel_targets:
 - conda-forge main
 rust_compiler:
-- rust-gnu
-rust_compiler_version:
-- 1.40.0
+- rust
+target_platform:
+- win-64
