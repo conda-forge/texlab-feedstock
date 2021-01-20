@@ -22,16 +22,16 @@ requirements:
 
 test:
   source_files:
-    - {{ name }}-{{ version }}-cargo-dependencies.json  # [unix]
+    - {{ name }}-{{ version }}-cargo-dependencies.json
   files:
-    - test_licenses.py  # [unix]
+    - test_licenses.py
   requires:
-    - python >=3.6  # [unix]
-    - ruamel_yaml  # [unix]
-    - pytest  # [unix]
+    - python >=3.6
+    - ruamel_yaml
+    - pytest
   commands:
     - texlab --version
-    - pytest test_licenses.py  # [unix]
+    - pytest test_licenses.py
 
 about:
   home: https://texlab.netlify.app
