@@ -4,7 +4,8 @@
 :: build
 cargo install --locked --root "%PREFIX%" --path . || goto :error
 
-:: remove extra build file
+:: remove extra build files
+del /F /Q "%PREFIX%\.crates2.json"
 del /F /Q "%PREFIX%\.crates.toml"
 
 goto :EOF

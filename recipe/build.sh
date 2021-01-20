@@ -5,6 +5,7 @@
 set -o xtrace -o nounset -o pipefail -o errexit
 
 export RUST_BACKTRACE=1
+export CARGO_LICENSES_FILE=$SRC_DIR/$PKG_NAME-$PKG_VERSION-cargo-dependencies.json
 
 if [ $(uname) = Darwin ] ; then
   export RUSTFLAGS="-C link-args=-Wl,-rpath,${PREFIX}/lib"
@@ -12,12 +13,14 @@ else
   export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
 fi
 
-cargo install cargo-license
-cargo-license --json > $PKG_NAME-$PKG_VERSION-cargo-dependencies.json
-cat $PKG_NAME-$PKG_VERSION-cargo-dependencies.json
-
 # build statically linked binary with Rust
 cargo install --locked --root "$PREFIX" --path .
 
-# remove extra build file
+# install cargo-license and dump licenses
+cargo install cargo-license
+cargo-license --json > $CARGO_LICENSES_FILE
+ls -lathr $CARGO_LICENSES_FILE
+
+# remove extra build files
+rm -f "${PREFIX}/.crates2.json"
 rm -f "${PREFIX}/.crates.toml"

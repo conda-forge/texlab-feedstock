@@ -22,16 +22,16 @@ requirements:
 
 test:
   source_files:
-    - {{ name }}-{{ version }}-cargo-dependencies.json
+    - {{ name }}-{{ version }}-cargo-dependencies.json  # [unix]
   files:
-    - check_licenses.py
+    - test_licenses.py  # [unix]
   requires:
-    - {{ compiler('rust') }}  # [unix]
     - python >=3.6  # [unix]
     - ruamel_yaml  # [unix]
+    - pytest  # [unix]
   commands:
     - texlab --version
-    - python check_licenses.py  # [unix]
+    - pytest test_licenses.py  # [unix]
 
 about:
   home: https://texlab.netlify.app
@@ -44,13 +44,10 @@ about:
     - library_licenses/aovec-LICENSE
     - library_licenses/arc-swap-LICENSE-APACHE
     - library_licenses/arc-swap-LICENSE-MIT
-    - library_licenses/arrayref-LICENSE
     - library_licenses/arrayvec-LICENSE-APACHE
     - library_licenses/arrayvec-LICENSE-MIT
     - library_licenses/ascii-canvas-LICENSE-APACHE
     - library_licenses/ascii-canvas-LICENSE-MIT
-    - library_licenses/ascii-LICENSE-APACHE
-    - library_licenses/ascii-LICENSE-MIT
     - library_licenses/async-trait-LICENSE-APACHE
     - library_licenses/async-trait-LICENSE-MIT
     - library_licenses/atty-LICENSE
@@ -528,3 +525,7 @@ about:
 extra:
   recipe-maintainers:
     - bollwyvl
+  cargo-license-ignore-crates:
+    - jsonrpc
+    - jsonrpc-derive
+    - texlab
