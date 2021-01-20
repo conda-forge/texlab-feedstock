@@ -1,27 +1,23 @@
 #!/usr/bin/env bash
-set -eux
+# NOTE: mostly derived from
+# https://github.com/conda-forge/py-spy-feedstock/blob/master/recipe/build.sh
 
-# Set conda CC as custom CC in Rust
-export CARGO_TARGET_X86_64_UNKNOWN_LINUX_GNU_LINKER=$CC
+set -o xtrace -o nounset -o pipefail -o errexit
 
-# Print Rust version
-rustc --version
+export RUST_BACKTRACE=1
 
-# Install cargo-license
-export CARGO_HOME="$BUILD_PREFIX/cargo"
-mkdir $CARGO_HOME
+if [ $(uname) = Darwin ] ; then
+  export RUSTFLAGS="-C link-args=-Wl,-rpath,${PREFIX}/lib"
+else
+  export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
+fi
+
 cargo install cargo-license
+cargo-license --json > $PKG_NAME-$PKG_VERSION-cargo-dependencies.json
+cat $PKG_NAME-$PKG_VERSION-cargo-dependencies.json
 
-# Check that all downstream libraries licenses are present
-export PATH=$PATH:$CARGO_HOME/bin
-cargo-license --json > dependencies.json
-cat dependencies.json
+# build statically linked binary with Rust
+cargo install --locked --root "$PREFIX" --path .
 
-python $RECIPE_DIR/check_licenses.py
-
-# actually build
-cargo build --release
-
-# install
-mkdir -p "${PREFIX}/bin"
-cp target/release/${PKG_NAME} "${PREFIX}/bin"
+# remove extra build file
+rm -f "${PREFIX}/.crates.toml"

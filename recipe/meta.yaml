@@ -17,20 +17,26 @@ build:
 requirements:
   build:
     - {{ compiler('rust') }}
-    - python >=3.6  # [unix]
-    - ruamel_yaml  # [unix]
   host: []
   run: []
 
 test:
+  source_files:
+    - {{ name }}-{{ version }}-cargo-dependencies.json
+  files:
+    - check_licenses.py
+  requires:
+    - {{ compiler('rust') }}  # [unix]
+    - python >=3.6  # [unix]
+    - ruamel_yaml  # [unix]
   commands:
     - texlab --version
+    - python check_licenses.py  # [unix]
 
 about:
   home: https://texlab.netlify.app
   license: GPL-3.0-or-later
   license_family: GPL
-  # BEGIN license_file
   license_file:
     - library_licenses/adler32-LICENSE
     - library_licenses/aho-corasick-LICENSE-MIT
@@ -59,6 +65,7 @@ about:
     - library_licenses/bit-vec-LICENSE-MIT
     - library_licenses/bitflags-LICENSE-APACHE
     - library_licenses/bitflags-LICENSE-MIT
+    - library_licenses/bitvec-LICENSE.txt
     - library_licenses/blake2b_simd-LICENSE
     - library_licenses/block-buffer-LICENSE-APACHE
     - library_licenses/block-buffer-LICENSE-MIT
@@ -90,6 +97,8 @@ about:
     - library_licenses/cloudabi-LICENSE
     - library_licenses/color_quant-LICENSE
     - library_licenses/combine-LICENSE
+    - library_licenses/const_fn-LICENSE-APACHE
+    - library_licenses/const_fn-LICENSE-MIT
     - library_licenses/constant_time_eq-LICENSE.txt
     - library_licenses/crc32fast-LICENSE-APACHE
     - library_licenses/crc32fast-LICENSE-MIT
@@ -139,6 +148,7 @@ about:
     - library_licenses/fuchsia-zircon-LICENSE
     - library_licenses/fuchsia-zircon-sys-COPYING
     - library_licenses/fuchsia-zircon-sys-LICENSE
+    - library_licenses/funty-LICENSE.txt
     - library_licenses/futf-LICENSE-APACHE
     - library_licenses/futf-LICENSE-MIT
     - library_licenses/futures-channel-LICENSE-APACHE
@@ -166,6 +176,8 @@ about:
     - library_licenses/getrandom-LICENSE-MIT
     - library_licenses/gif-LICENSE-APACHE
     - library_licenses/gif-LICENSE-MIT
+    - library_licenses/half-LICENSE-APACHE
+    - library_licenses/half-LICENSE-MIT
     - library_licenses/heck-LICENSE-APACHE
     - library_licenses/heck-LICENSE-MIT
     - library_licenses/hermit-abi-LICENSE-APACHE
@@ -218,6 +230,9 @@ about:
     - library_licenses/mac-COPYING
     - library_licenses/mac-LICENSE-APACHE
     - library_licenses/mac-LICENSE-MIT
+    - library_licenses/markup5ever_rcdom-COPYRIGHT
+    - library_licenses/markup5ever_rcdom-LICENSE-APACHE
+    - library_licenses/markup5ever_rcdom-LICENSE-MIT
     - library_licenses/markup5ever-LICENSE-APACHE
     - library_licenses/markup5ever-LICENSE-MIT
     - library_licenses/matches-LICENSE
@@ -298,6 +313,7 @@ about:
     - library_licenses/proc-macro2-LICENSE-MIT
     - library_licenses/quote-LICENSE-APACHE
     - library_licenses/quote-LICENSE-MIT
+    - library_licenses/radium-LICENSE.txt
     - library_licenses/rand_chacha-LICENSE-APACHE
     - library_licenses/rand_chacha-LICENSE-MIT
     - library_licenses/rand_core-LICENSE-APACHE
@@ -352,6 +368,8 @@ about:
     - library_licenses/semver-LICENSE-MIT
     - library_licenses/semver-parser-LICENSE-APACHE
     - library_licenses/semver-parser-LICENSE-MIT
+    - library_licenses/serde_cbor-LICENSE-APACHE
+    - library_licenses/serde_cbor-LICENSE-MIT
     - library_licenses/serde_derive-LICENSE-APACHE
     - library_licenses/serde_derive-LICENSE-MIT
     - library_licenses/serde_json-LICENSE-APACHE
@@ -394,6 +412,7 @@ about:
     - library_licenses/syn-LICENSE-MIT
     - library_licenses/syn-mid-LICENSE-APACHE
     - library_licenses/syn-mid-LICENSE-MIT
+    - library_licenses/tap-LICENSE.txt
     - library_licenses/tempfile-LICENSE-APACHE
     - library_licenses/tempfile-LICENSE-MIT
     - library_licenses/tendril-LICENSE-APACHE
@@ -409,6 +428,7 @@ about:
     - library_licenses/thread_local-LICENSE-APACHE
     - library_licenses/thread_local-LICENSE-MIT
     - library_licenses/tiff-LICENSE
+    - library_licenses/time-LICENSE-MIT
     - library_licenses/tinytemplate-LICENSE-APACHE
     - library_licenses/tinytemplate-LICENSE-MIT
     - library_licenses/titlecase-LICENSE
@@ -490,10 +510,13 @@ about:
     - library_licenses/winapi-x86_64-pc-windows-gnu-LICENSE-MIT
     - library_licenses/ws2_32-sys-LICENSE-APACHE
     - library_licenses/ws2_32-sys-LICENSE-MIT
+    - library_licenses/wyz-LICENSE.txt
+    - library_licenses/xml5ever-COPYRIGHT
+    - library_licenses/xml5ever-LICENSE-APACHE
+    - library_licenses/xml5ever-LICENSE-MIT
     - library_licenses/xmlparser-LICENSE-APACHE
     - library_licenses/xmlparser-LICENSE-MIT
     - LICENSE
-  # END license_file
   summary: An implementation of the Language Server Protocol for LaTeX
   description: |
     A cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
