@@ -63,13 +63,13 @@ def test_missing_license(crate):
     """looks for magic-named files
     handles at least:
 
-    library_licenses/<crate-name>-LICEN(S|C)E-(|-MIT|-APACHE|-ZLIB)
+    library_licenses/<crate-name>-(UN)LICEN(S|C)E-(|-MIT|-APACHE|-ZLIB)
 
     COPYING is not a license, but some of the manually-built files need it
     for clarification
     """
     assert LIBRARY_LICENSES.exists()
-    matches = list(LIBRARY_LICENSES.glob(f"{crate}-LICEN*"))
+    matches = list(LIBRARY_LICENSES.glob(f"{crate}-*LICEN*"))
 
     errors = []
 
