@@ -424,7 +424,6 @@ about:
     - library_licenses/url-LICENSE-MIT
     - library_licenses/utf-8-LICENSE-APACHE
     - library_licenses/utf-8-LICENSE-MIT
-    - library_licenses/utf-8-COPYING
     - library_licenses/uuid-LICENSE-APACHE
     - library_licenses/uuid-LICENSE-MIT
     - library_licenses/v_escape_derive-LICENSE-APACHE
