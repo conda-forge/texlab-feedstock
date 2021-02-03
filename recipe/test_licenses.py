@@ -69,16 +69,19 @@ def test_missing_license(crate):
     for clarification
     """
     assert LIBRARY_LICENSES.exists()
-    matches = list(LIBRARY_LICENSES.glob(f"{crate}-*LICEN*"))
+    matches = [
+        *LIBRARY_LICENSES.glob(f"{crate}-LICEN*"),
+        *LIBRARY_LICENSES.glob(f"{crate}-UNLICEN*")
+    )
 
     errors = []
 
     if not matches:
-        errors += ["no license files"]
+        errors += [f"no license files for {crate}"]
 
     for match in matches:
         if match.name not in META_LICENSE_NAMES:
-            errors += ["not in meta.yaml"]
+            errors += [f"{crate}: {match.name} not in meta.yaml"]
 
     assert not errors, ruamel_yaml.safe_dump(
         DEPENDENCIES[crate], default_flow_style=False
@@ -87,8 +90,10 @@ def test_missing_license(crate):
 
 @pytest.mark.parametrize("license_in_yaml", META_LICENSE_NAMES)
 def test_over_licensed(license_in_yaml):
-    if "-LICENSE" in license_in_yaml:
-        crate = license_in_yaml.split("-LICENSE")[0]
+    if "-LICEN" in license_in_yaml:
+        crate = license_in_yaml.split("-LICEN")[0]
+    elif "-UNLICEN" in license_in_yaml:
+        crate = license_in_yaml.split("-UNLICEN")[0]
     elif "-COPYING" in license_in_yaml:
         crate = license_in_yaml.split("-COPYING")[0]
     else:
