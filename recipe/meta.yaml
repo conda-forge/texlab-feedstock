@@ -43,6 +43,8 @@ about:
 
     # win
     - library_licenses/arrayref-LICENSE  # [win]
+    - library_licenses/ascii-LICENSE-APACHE  # [win]
+    - library_licenses/ascii-LICENSE-MIT  # [win]
     - library_licenses/blake2b_simd-LICENSE  # [win]
     - library_licenses/bumpalo-LICENSE-MIT  # [win]
     - library_licenses/cesu8-LICENSE  # [win]
@@ -69,6 +71,7 @@ about:
     - library_licenses/miow-LICENSE-MIT  # [win]
     - library_licenses/numtoa-LICENSE-APACHE  # [win]
     - library_licenses/numtoa-LICENSE-MIT  # [win]
+    - library_licenses/rdrand-LICENSE  # [win]
     - library_licenses/redox_syscall-LICENSE  # [win]
     - library_licenses/redox_termios-LICENSE  # [win]
     - library_licenses/redox_users-LICENSE  # [win]
