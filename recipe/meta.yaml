@@ -38,7 +38,39 @@ about:
   license: GPL-3.0-or-later
   license_family: GPL
   license_file:
+    # the source license
     - LICENSE
+
+    # win
+    - library_licenses/blake2b_simd-LICENSE  # [win]
+    - library_licenses/arrayref-LICENSE  # [win]
+    - library_licenses/bumpalo-LICENSE-MIT  # [win]
+    - library_licenses/cesu8-LICENSE  # [win]
+    - library_licenses/cloudabi-LICENSE  # [win]
+    - library_licenses/combine-LICENSE  # [win]
+    - library_licenses/constant_time_eq-LICENSE.txt  # [win]
+    - library_licenses/error-chain-LICENSE-MIT  # [win]
+    - library_licenses/fuchsia-cprng-LICENSE  # [win]
+    - library_licenses/fuchsia-zircon-LICENSE  # [win]
+    - library_licenses/fuchsia-zircon-sys-COPYING  # [win]
+    - library_licenses/fuchsia-zircon-sys-LICENSE  # [win]
+    - library_licenses/hermit-abi-LICENSE-APACHE  # [win]
+    - library_licenses/hermit-abi-LICENSE-MIT  # [win]
+    - library_licenses/jni-LICENSE-APACHE  # [win]
+    - library_licenses/jni-LICENSE-MIT  # [win]
+    - library_licenses/jni-sys-LICENSE-APACHE  # [win]
+    - library_licenses/jni-sys-LICENSE-MIT  # [win]
+    - library_licenses/js-sys-LICENSE-APACHE  # [win]
+    - library_licenses/js-sys-LICENSE-MIT  # [win]
+    - library_licenses/kernel32-sys-LICENSE-MIT  # [win]
+    - library_licenses/mio-named-pipes-LICENSE-APACHE  # [win]
+    - library_licenses/mio-named-pipes-LICENSE-MIT  # [win]
+    - library_licenses/miow-LICENSE-APACHE  # [win]
+    - library_licenses/miow-LICENSE-MIT  # [win]
+    - library_licenses/numtoa-LICENSE-APACHE  # [win]
+    - library_licenses/numtoa-LICENSE-MIT  # [win]
+
+    # all
     - library_licenses/adler32-LICENSE
     - library_licenses/aho-corasick-LICENSE-MIT
     - library_licenses/ansi_term-LICENCE
