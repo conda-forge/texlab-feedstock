@@ -71,8 +71,8 @@ def test_missing_license(crate):
     assert LIBRARY_LICENSES.exists()
     matches = [
         *LIBRARY_LICENSES.glob(f"{crate}-LICEN*"),
-        *LIBRARY_LICENSES.glob(f"{crate}-UNLICEN*")
-    )
+        *LIBRARY_LICENSES.glob(f"{crate}-UNLICEN*"),
+    ]
 
     errors = []
 
