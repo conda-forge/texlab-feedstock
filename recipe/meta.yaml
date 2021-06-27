@@ -107,15 +107,20 @@ about:
     - library_licenses/winapi-x86_64-pc-windows-gnu-LICENSE-APACHE  # [win]
     - library_licenses/winapi-x86_64-pc-windows-gnu-LICENSE-MIT  # [win]
 
-
     # all
+    - library_licenses/ahash-LICENSE-APACHE
+    - library_licenses/ahash-LICENSE-MIT
     - library_licenses/aho-corasick-LICENSE-MIT
     - library_licenses/ansi_term-LICENCE
+    - library_licenses/anyhow-LICENSE-APACHE
+    - library_licenses/anyhow-LICENSE-MIT
     - library_licenses/ascii-canvas-LICENSE-APACHE
     - library_licenses/ascii-canvas-LICENSE-MIT
     - library_licenses/atty-LICENSE
     - library_licenses/autocfg-LICENSE-APACHE
     - library_licenses/autocfg-LICENSE-MIT
+    - library_licenses/beef-LICENSE-APACHE
+    - library_licenses/beef-LICENSE-MIT
     - library_licenses/bibutils-sys-LICENSE
     - library_licenses/bit-set-LICENSE-APACHE
     - library_licenses/bit-set-LICENSE-MIT
@@ -124,6 +129,7 @@ about:
     - library_licenses/bitflags-LICENSE-APACHE
     - library_licenses/bitflags-LICENSE-MIT
     - library_licenses/byteorder-LICENSE-MIT
+    - library_licenses/cancellation-LICENSE
     - library_licenses/cc-LICENSE-APACHE
     - library_licenses/cc-LICENSE-MIT
     - library_licenses/cfg-if-LICENSE-APACHE
@@ -135,6 +141,8 @@ about:
     - library_licenses/citeproc-proc-LICENSE
     - library_licenses/clap-LICENSE-APACHE
     - library_licenses/clap-LICENSE-MIT
+    - library_licenses/console-LICENSE-MIT
+    - library_licenses/convert_case-LICENSE-MIT
     - library_licenses/crossbeam-channel-LICENSE-APACHE
     - library_licenses/crossbeam-channel-LICENSE-MIT
     - library_licenses/crossbeam-deque-LICENSE-APACHE
@@ -148,27 +156,41 @@ about:
     - library_licenses/crossbeam-utils-LICENSE-APACHE
     - library_licenses/crossbeam-utils-LICENSE-MIT
     - library_licenses/csl-LICENSE.md
+    - library_licenses/cstree-LICENSE-APACHE
+    - library_licenses/cstree-LICENSE-MIT
+    - library_licenses/derive_more-LICENSE-MIT
     - library_licenses/derive-new-LICENSE
     - library_licenses/diff-LICENSE-APACHE
     - library_licenses/diff-LICENSE-MIT
     - library_licenses/dirs-LICENSE-APACHE
     - library_licenses/dirs-LICENSE-MIT
+    - library_licenses/dtoa-LICENSE-APACHE
+    - library_licenses/dtoa-LICENSE-MIT
     - library_licenses/either-LICENSE-APACHE
     - library_licenses/either-LICENSE-MIT
     - library_licenses/ena-LICENSE-APACHE
     - library_licenses/ena-LICENSE-MIT
+    - library_licenses/encoding_rs_io-LICENSE-APACHE
+    - library_licenses/encoding_rs_io-LICENSE-MIT
+    - library_licenses/encoding_rs-LICENSE-APACHE
+    - library_licenses/encoding_rs-LICENSE-MIT
     - library_licenses/fern-LICENSE
+    - library_licenses/filetime-LICENSE-APACHE
+    - library_licenses/filetime-LICENSE-MIT
     - library_licenses/fixedbitset-LICENSE-APACHE
     - library_licenses/fixedbitset-LICENSE-MIT
     - library_licenses/fnv-LICENSE-APACHE
     - library_licenses/fnv-LICENSE-MIT
+    - library_licenses/form_urlencoded-LICENSE-APACHE
+    - library_licenses/form_urlencoded-LICENSE-MIT
     - library_licenses/futf-LICENSE-APACHE
     - library_licenses/futf-LICENSE-MIT
-    - library_licenses/futures-util-LICENSE-MIT
     - library_licenses/fuzzy-matcher-LICENSE
     - library_licenses/generational-arena-LICENSE
     - library_licenses/getrandom-LICENSE-APACHE
     - library_licenses/getrandom-LICENSE-MIT
+    - library_licenses/hashbrown-LICENSE-APACHE
+    - library_licenses/hashbrown-LICENSE-MIT
     - library_licenses/heck-LICENSE-APACHE
     - library_licenses/heck-LICENSE-MIT
     - library_licenses/html2md-LICENSE
@@ -180,6 +202,10 @@ about:
     - library_licenses/indexmap-LICENSE-MIT
     - library_licenses/indoc-LICENSE-APACHE
     - library_licenses/indoc-LICENSE-MIT
+    - library_licenses/inotify-LICENSE-MIT
+    - library_licenses/inotify-sys-LICENSE-MIT
+    - library_licenses/insta-LICENSE-APACHE
+    - library_licenses/instant-LICENSE-BSD-3-Clause
     - library_licenses/itertools-LICENSE-APACHE
     - library_licenses/itertools-LICENSE-MIT
     - library_licenses/itoa-LICENSE-APACHE
@@ -188,14 +214,22 @@ about:
     - library_licenses/lalrpop-LICENSE-MIT
     - library_licenses/lalrpop-util-LICENSE-APACHE
     - library_licenses/lalrpop-util-LICENSE-MIT
+    - library_licenses/lasso-LICENSE-APACHE
+    - library_licenses/lasso-LICENSE-MIT
     - library_licenses/lazy_static-LICENSE-APACHE
     - library_licenses/lazy_static-LICENSE-MIT
     - library_licenses/libc-LICENSE-APACHE
     - library_licenses/libc-LICENSE-MIT
+    - library_licenses/linked-hash-map-LICENSE-APACHE
+    - library_licenses/linked-hash-map-LICENSE-MIT
     - library_licenses/lock_api-LICENSE-APACHE
     - library_licenses/lock_api-LICENSE-MIT
     - library_licenses/log-LICENSE-APACHE
     - library_licenses/log-LICENSE-MIT
+    - library_licenses/logos-derive-LICENSE-APACHE
+    - library_licenses/logos-derive-LICENSE-MIT
+    - library_licenses/logos-LICENSE-APACHE
+    - library_licenses/logos-LICENSE-MIT
     - library_licenses/lsp-types-LICENSE
     - library_licenses/mac-COPYING
     - library_licenses/mac-LICENSE-APACHE
@@ -211,8 +245,11 @@ about:
     - library_licenses/memchr-LICENSE-MIT
     - library_licenses/memoffset-LICENSE
     - library_licenses/mio-LICENSE
+    - library_licenses/multimap-LICENSE-APACHE
+    - library_licenses/multimap-LICENSE-MIT
     - library_licenses/new_debug_unreachable-LICENSE-MIT
     - library_licenses/nom-LICENSE
+    - library_licenses/notify-LICENSE-CC0
     - library_licenses/num_cpus-LICENSE-APACHE
     - library_licenses/num_cpus-LICENSE-MIT
     - library_licenses/once_cell-LICENSE-APACHE
@@ -233,6 +270,7 @@ about:
     - library_licenses/phf_macros-LICENSE
     - library_licenses/phf_shared-LICENSE
     - library_licenses/phf-LICENSE
+    - library_licenses/pico-args-LICENSE-MIT
     - library_licenses/ppv-lite86-LICENSE-APACHE
     - library_licenses/ppv-lite86-LICENSE-MIT
     - library_licenses/precomputed-hash-LICENSE
@@ -298,13 +336,18 @@ about:
     - library_licenses/serde_json-LICENSE-MIT
     - library_licenses/serde_repr-LICENSE-APACHE
     - library_licenses/serde_repr-LICENSE-MIT
+    - library_licenses/serde_yaml-LICENSE-APACHE
+    - library_licenses/serde_yaml-LICENSE-MIT
     - library_licenses/serde-LICENSE-APACHE
     - library_licenses/serde-LICENSE-MIT
+    - library_licenses/similar-LICENSE-APACHE
     - library_licenses/siphasher-COPYING
     - library_licenses/siphasher-LICENSE-APACHE
     - library_licenses/siphasher-LICENSE-MIT
     - library_licenses/smallvec-LICENSE-APACHE
     - library_licenses/smallvec-LICENSE-MIT
+    - library_licenses/smol_str-LICENSE-APACHE
+    - library_licenses/smol_str-LICENSE-MIT
     - library_licenses/stable_deref_trait-LICENSE-APACHE
     - library_licenses/stable_deref_trait-LICENSE-MIT
     - library_licenses/string_cache_codegen-LICENSE-APACHE
@@ -329,6 +372,10 @@ about:
     - library_licenses/tendril-LICENSE-MIT
     - library_licenses/term-LICENSE-APACHE
     - library_licenses/term-LICENSE-MIT
+    - library_licenses/terminal_size-LICENSE-APACHE
+    - library_licenses/terminal_size-LICENSE-MIT
+    - library_licenses/text-size-LICENSE-APACHE
+    - library_licenses/text-size-LICENSE-MIT
     - library_licenses/textwrap-LICENSE
     - library_licenses/thiserror-impl-LICENSE-APACHE
     - library_licenses/thiserror-impl-LICENSE-MIT
@@ -336,10 +383,16 @@ about:
     - library_licenses/thiserror-LICENSE-MIT
     - library_licenses/thread_local-LICENSE-APACHE
     - library_licenses/thread_local-LICENSE-MIT
+    - library_licenses/threadpool-LICENSE-APACHE
+    - library_licenses/threadpool-LICENSE-MIT
     - library_licenses/time-LICENSE-MIT
+    - library_licenses/tiny-keccak-LICENSE-CC0
     - library_licenses/tinyvec_macros-LICENSE-APACHE
     - library_licenses/tinyvec_macros-LICENSE-MIT
     - library_licenses/tinyvec_macros-LICENSE-ZLIB
+    - library_licenses/tinyvec-LICENSE-APACHE
+    - library_licenses/tinyvec-LICENSE-MIT
+    - library_licenses/tinyvec-LICENSE-ZLIB
     - library_licenses/titlecase-LICENSE
     - library_licenses/triomphe-LICENSE-APACHE
     - library_licenses/triomphe-LICENSE-MIT
@@ -396,6 +449,7 @@ about:
     - library_licenses/xmlparser-LICENSE-APACHE
     - library_licenses/xmlparser-LICENSE-MIT
     - library_licenses/yaml-rust-LICENSE-MIT
+
   summary: An implementation of the Language Server Protocol for LaTeX
   description: |
     A cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
