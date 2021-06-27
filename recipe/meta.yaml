@@ -98,8 +98,6 @@ about:
     - library_licenses/wasm-bindgen-shared-LICENSE-MIT  # [win]
     - library_licenses/web-sys-LICENSE-APACHE  # [win]
     - library_licenses/web-sys-LICENSE-MIT  # [win]
-    - library_licenses/winapi-build-LICENSE-APACHE  # [win]
-    - library_licenses/winapi-build-LICENSE-MIT  # [win]
     - library_licenses/winapi-i686-pc-windows-gnu-LICENSE-APACHE  # [win]
     - library_licenses/winapi-i686-pc-windows-gnu-LICENSE-MIT  # [win]
     - library_licenses/winapi-LICENSE-APACHE  # [win]
@@ -108,8 +106,6 @@ about:
     - library_licenses/winapi-util-LICENSE-MIT  # [win]
     - library_licenses/winapi-x86_64-pc-windows-gnu-LICENSE-APACHE  # [win]
     - library_licenses/winapi-x86_64-pc-windows-gnu-LICENSE-MIT  # [win]
-    - library_licenses/ws2_32-sys-LICENSE-APACHE  # [win]
-    - library_licenses/ws2_32-sys-LICENSE-MIT  # [win]
 
 
     # all
@@ -463,10 +459,17 @@ about:
     - library_licenses/time-LICENSE-MIT
     - library_licenses/tinytemplate-LICENSE-APACHE
     - library_licenses/tinytemplate-LICENSE-MIT
+    - library_licenses/tinyvec_macros-LICENSE-APACHE
+    - library_licenses/tinyvec_macros-LICENSE-MIT
+    - library_licenses/tinyvec_macros-LICENSE-ZLIB
     - library_licenses/titlecase-LICENSE
     - library_licenses/tokio-LICENSE
     - library_licenses/tokio-macros-LICENSE
     - library_licenses/tokio-util-LICENSE
+    - library_licenses/triomphe-LICENSE-APACHE
+    - library_licenses/triomphe-LICENSE-MIT
+    - library_licenses/typed-builder-LICENSE-APACHE
+    - library_licenses/typed-builder-LICENSE-MIT
     - library_licenses/typenum-LICENSE
     - library_licenses/ucd-trie-LICENSE-APACHE
     - library_licenses/ucd-trie-LICENSE-MIT
@@ -498,6 +501,8 @@ about:
     - library_licenses/url-LICENSE-MIT
     - library_licenses/utf-8-LICENSE-APACHE
     - library_licenses/utf-8-LICENSE-MIT
+    - library_licenses/utf8-ranges-LICENSE-MIT
+    - library_licenses/utf8-ranges-UNLICENSE
     - library_licenses/uuid-LICENSE-APACHE
     - library_licenses/uuid-LICENSE-MIT
     - library_licenses/v_escape_derive-LICENSE-APACHE
@@ -517,6 +522,7 @@ about:
     - library_licenses/xml5ever-LICENSE-MIT
     - library_licenses/xmlparser-LICENSE-APACHE
     - library_licenses/xmlparser-LICENSE-MIT
+    - library_licenses/yaml-rust-LICENSE-MIT
   summary: An implementation of the Language Server Protocol for LaTeX
   description: |
     A cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
