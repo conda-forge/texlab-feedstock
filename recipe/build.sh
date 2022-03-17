@@ -16,10 +16,10 @@ fi
 # build statically linked binary with Rust
 cargo install --locked --root "$PREFIX" --path .
 
-# install cargo-license and dump licenses
-cargo install cargo-license
-cargo-license --json > $CARGO_LICENSES_FILE
-ls -lathr $CARGO_LICENSES_FILE
+# dump licenses
+cargo-bundle-licenses \
+  --format yaml \
+  --output ${SRC_DIR}/THIRDPARTY.yml
 
 # remove extra build files
 rm -f "${PREFIX}/.crates2.json"
