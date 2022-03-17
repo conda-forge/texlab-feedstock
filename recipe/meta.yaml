@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/latex-lsp/texlab/archive/v{{ version }}.tar.gz
-  sha256: 04978b118b455607b5debd0a886f0728ca6c498289d2a0c60d8f83b316dc5ebc
+  sha256: 380395a37ee2ece590c0db04ac4898f5f430ee37d0ab0fa0801805167fff066a
 
 build:
   number: 0
