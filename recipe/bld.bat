@@ -8,12 +8,11 @@ cargo install --locked --root "%PREFIX%" --path . || goto :error
 md %SCRIPTS% || echo "%SCRIPTS% already exists"
 move %PREFIX%\bin\texlab.exe  %SCRIPTS%
 
-:: install cargo-license and dump licenses
-set CARGO_LICENSES_FILE=%SRC_DIR%\%PKG_NAME%-%PKG_VERSION%-cargo-dependencies.json
-cargo install cargo-license
-set CARGO_LICENSE_BIN=%BUILD_PREFIX%\.cargo\bin\cargo-license
-%CARGO_LICENSE_BIN% --json > %CARGO_LICENSES_FILE%
-dir %CARGO_LICENSES_FILE%
+:: dump licenses
+cargo-bundle-licenses ^
+    --format yaml ^
+    --output %SRC_DIR%\THIRDPARTY.yml ^
+    || goto :error
 
 :: remove extra build files
 del /F /Q "%PREFIX%\.crates2.json"
