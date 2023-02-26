@@ -1,11 +1,11 @@
-About texlab
-============
+About texlab-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/texlab-feedstock/blob/main/LICENSE.txt)
 
 Home: https://texlab.netlify.app
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/texlab-feedstock/blob/main/LICENSE.txt)
 
 Summary: An implementation of the Language Server Protocol for LaTeX
 
