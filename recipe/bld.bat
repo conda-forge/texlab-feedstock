@@ -2,7 +2,7 @@
 :: https://github.com/conda-forge/py-spy-feedstock/blob/master/recipe/bld.bat
 
 :: build
-cargo install --locked --root "%PREFIX%" --path . || goto :error
+cargo install --locked --root "%PREFIX%" --path crates/texlab || goto :error
 
 :: move to scripts
 md %SCRIPTS% || echo "%SCRIPTS% already exists"

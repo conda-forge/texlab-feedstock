@@ -14,7 +14,7 @@ else
 fi
 
 # build statically linked binary with Rust
-cargo install --locked --root "$PREFIX" --path .
+cargo install --locked --root "$PREFIX" --path crates/texlab
 
 # dump licenses
 cargo-bundle-licenses \
