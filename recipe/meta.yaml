@@ -9,7 +9,7 @@ source:
   sha256: af327ac35b1803d1b9831abf915b9bbd9f18d8659facfb72f820e006b60bfa41
 
 build:
-  number: 0
+  number: 1
   missing_dso_whitelist:
     - /usr/lib/libresolv.9.dylib  # [osx]
 
