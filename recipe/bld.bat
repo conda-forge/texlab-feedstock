@@ -2,24 +2,17 @@
 :: https://github.com/conda-forge/py-spy-feedstock/blob/master/recipe/bld.bat
 
 :: build
-cargo install --locked --root "%PREFIX%" --path crates/texlab || goto :error
+cargo install --locked --root "%PREFIX%" --path crates/texlab || exit 1
 
 :: move to scripts
-md %SCRIPTS% || echo "%SCRIPTS% already exists"
-move %PREFIX%\bin\texlab.exe  %SCRIPTS%
+md "%SCRIPTS%" || echo "%SCRIPTS% already exists"
+move "%PREFIX%\bin\texlab.exe" "%SCRIPTS%"
 
 :: dump licenses
 cargo-bundle-licenses ^
     --format yaml ^
-    --output %SRC_DIR%\THIRDPARTY.yml ^
-    || goto :error
+    --output "%SRC_DIR%\THIRDPARTY.yml" ^
+    || exit 1
 
 :: remove extra build files
-del /F /Q "%PREFIX%\.crates2.json"
-del /F /Q "%PREFIX%\.crates.toml"
-
-goto :EOF
-
-:error
-echo Failed with error #%errorlevel%.
-exit /b %errorlevel%
+del /F /Q "%PREFIX%\.crates2.json" "%PREFIX%\.crates.toml"
