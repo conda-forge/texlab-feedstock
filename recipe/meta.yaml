@@ -1,4 +1,4 @@
-{% set version = "5.12.1" %}
+{% set version = "5.12.2" %}
 
 package:
   name: texlab
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/latex-lsp/texlab/archive/v{{ version }}.tar.gz
-  sha256: 008db560759f207c31001dab94beb2229f0d263f86f4703f07d8eb8fc93e12c9
+  sha256: 679d72a73269addcd870d6742b418aed2fb7e256137f360e2cc80271f20f0704
 
 build:
   number: 0
