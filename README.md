@@ -3,7 +3,7 @@ About texlab-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/texlab-feedstock/blob/main/LICENSE.txt)
 
-Home: https://texlab.netlify.app
+Home: https://texlab.netlify.app/
 
 Package license: GPL-3.0-or-later
 
@@ -16,7 +16,6 @@ Documentation: https://texlab.netlify.app/docs
 A cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
 providing rich cross-editing support for the [LaTeX](https://www.latex-project.org/) typesetting system.
 We provide an [extension](https://github.com/latex-lsp/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
-
 
 Current build status
 ====================
