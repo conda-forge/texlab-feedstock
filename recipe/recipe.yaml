@@ -1,46 +1,52 @@
-{% set version = "5.22.1" %}
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 5.22.1
 
 package:
   name: texlab
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  url: https://github.com/latex-lsp/texlab/archive/v{{ version }}.tar.gz
+  url: https://github.com/latex-lsp/texlab/archive/v${{ version }}.tar.gz
   sha256: dd7602c069e8411c1a744d5b25f80686339ef18e6f12c1bc971f27912e3e9714
 
 build:
-  number: 0
-  detect_binary_files_with_prefix: false
-  missing_dso_whitelist:
-    - /usr/lib/libresolv.9.dylib  # [osx]
+  number: 1
+  script:
+    file: build-texlab
+  prefix_detection:
+    ignore_binary_files: false
+  dynamic_linking:
+    missing_dso_allowlist:
+      - if: osx
+        then: /usr/lib/libresolv.9.dylib
 
 requirements:
   build:
-    - {{ compiler('rust') }}
-    - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler("rust") }}
+    - ${{ compiler("c") }}
+    - ${{ stdlib("c") }}
     - cargo-bundle-licenses
-  host: []
-  run: []
 
-test:
-  commands:
-    - texlab --version
+tests:
+  - script:
+      - texlab --version
 
 about:
-  home: https://texlab.netlify.app
   license: GPL-3.0-or-later
-  license_family: GPL
   license_file:
     - LICENSE
     - THIRDPARTY.yml
   summary: An implementation of the Language Server Protocol for LaTeX
+  homepage: https://texlab.netlify.app
+  repository: https://github.com/latex-lsp/texlab
+  documentation: https://texlab.netlify.app/docs
   description: |
     A cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
     providing rich cross-editing support for the [LaTeX](https://www.latex-project.org/) typesetting system.
     We provide an [extension](https://github.com/latex-lsp/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
-  doc_url: https://texlab.netlify.app/docs
-  dev_url: https://github.com/latex-lsp/texlab
 
 extra:
   recipe-maintainers:

@@ -3,7 +3,7 @@ About texlab-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/texlab-feedstock/blob/main/LICENSE.txt)
 
-Home: https://texlab.netlify.app
+Home: https://texlab.netlify.app/
 
 Package license: GPL-3.0-or-later
 
@@ -16,7 +16,6 @@ Documentation: https://texlab.netlify.app/docs
 A cross-platform implementation of the [Language Server Protocol](https://microsoft.github.io/language-server-protocol)
 providing rich cross-editing support for the [LaTeX](https://www.latex-project.org/) typesetting system.
 We provide an [extension](https://github.com/latex-lsp/texlab-vscode) for [Visual Studio Code](https://code.visualstudio.com).
-
 
 Current build status
 ====================
@@ -75,6 +74,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10169&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/texlab-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10169&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/texlab-feedstock?branchName=main&jobName=win&configuration=win%20win_arm64_" alt="variant">
                 </a>
               </td>
             </tr>
