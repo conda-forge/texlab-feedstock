@@ -4,21 +4,25 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-export RUST_BACKTRACE=1
+_UNAME=`uname -s`
 
-if [ $(uname) = Darwin ] ; then
+if [ "${_UNAME}" = Darwin ] ; then
   export RUSTFLAGS="-C link-args=-Wl,-rpath,${PREFIX}/lib"
 else
   export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
 fi
 
+export CARGO_PROFILE_RELEASE_STRIP=symbols
+
 # build statically linked binary with Rust
-cargo install --locked --root "${PREFIX}" --path crates/texlab
+cargo install \
+  --locked \
+  --no-track \
+  --profile release \
+  --root "${PREFIX}" \
+  --path crates/texlab
 
 # dump licenses
 cargo-bundle-licenses \
   --format yaml \
   --output "${SRC_DIR}/THIRDPARTY.yml"
-
-# remove extra build files
-rm -f "${PREFIX}/.crates2.json" "${PREFIX}/.crates.toml"
