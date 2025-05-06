@@ -4,9 +4,9 @@
 
 set -o xtrace -o nounset -o pipefail -o errexit
 
-_UNAME=`uname -s`
+_UNAME=$(uname -s)
 
-if [ "${_UNAME}" = Darwin ] ; then
+if [[ "${_UNAME}" = "Darwin" ]] ; then
   export RUSTFLAGS="-C link-args=-Wl,-rpath,${PREFIX}/lib"
 else
   export RUSTFLAGS="-C link-arg=-Wl,-rpath-link,${PREFIX}/lib -L${PREFIX}/lib"
