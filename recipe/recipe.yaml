@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: 5.22.1
+  version: "5.23.0"
 
 package:
   name: texlab
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/latex-lsp/texlab/archive/v${{ version }}.tar.gz
-  sha256: dd7602c069e8411c1a744d5b25f80686339ef18e6f12c1bc971f27912e3e9714
+  sha256: f14a3e100706cc217a6720057dea2e30b7c7a3a7297e6d28ea741a533500a1cf
 
 build:
-  number: 1
+  number: 0
   script:
     file: build-texlab
   prefix_detection:
