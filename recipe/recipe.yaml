@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "5.25.0"
+  version: "5.25.1"
 
 package:
   name: texlab
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/latex-lsp/texlab/archive/v${{ version }}.tar.gz
-  sha256: 95918caccd598ba47adb867fceb414ab26058ee45369da9131bc048ef920017e
+  sha256: 7d8435761b0012b6de1cfdb4db37f5eafcba8e670530ef1df44aa9934eef0887
 
 build:
   number: 0
