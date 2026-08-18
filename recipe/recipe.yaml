@@ -13,7 +13,7 @@ source:
   sha256: 47af7e71247fe186ddbaa62373ce5fbebc802ab8df9924958ac62788a644f84e
 
 build:
-  number: 0
+  number: 1
   script:
     file: build-texlab
   prefix_detection:
